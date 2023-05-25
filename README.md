@@ -11,7 +11,11 @@ Those Topics/Tags are applied to the Attributes Needs, Skills.
 
 You can sort people by Those Tags and will have a nice overview, who can help who.
 
-
+### Future Extesions:
+1. Cloud saved Contacts,
+2. Quick Contact exchange via bluetooth wifi or QR
+3. lightweight, not as overloaded as LinkedIn
+ 
 
 ## node.js, Svelte, capacitor
 
