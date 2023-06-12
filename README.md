@@ -12,20 +12,19 @@ Those Topics/Tags are applied to the Attributes Needs, Skills.
 You can sort people by Those Tags and will have a nice overview, who can help who.
 
 ### Future Extesions:
+
 1. Cloud saved Contacts,
 2. Quick Contact exchange via bluetooth wifi or QR
 3. lightweight, not as overloaded as LinkedIn
 4. Custom Import Export for Excel and more
- 
 
-## node.js, Svelte, capacitor
+## Using Flutter
 
 # Installation
 
-1. Node.js
-   Check if you have node.js, run your terminal and type `npm`
-   if it doesnt exist install node.js (https://nodejs.org/en/download)
-
-2. simply follow the instructions on https://capacitorjs.com/docs/getting-started/environment-setup
+1. Google Flutter installation
+2. follow the instructions
+3. clone the git
+4. run `flutter run dev`
 
 you should be good to go
