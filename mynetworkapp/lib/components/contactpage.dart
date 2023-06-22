@@ -5,25 +5,42 @@ class Contactpage extends StatefulWidget {
 
   final String name;
   @override
-  _ContactpageState createState() => _ContactpageState();
+  State<Contactpage> createState() => _ContactpageState();
 }
 
 class _ContactpageState extends State<Contactpage> {
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        color: const Color.fromARGB(255, 169, 142, 61),
-        child: Column(
-          children: [
-            Text(widget.name),
-            const Text("2"),
-            const Text("3"),
-            const Text("4"),
-            const Text("5"),
-          ],
+    return ListView(children: [
+      Center(
+        child: Container(
+          color: const Color.fromARGB(255, 169, 142, 61),
+          child: Column(
+            children: [
+              Text(widget.name),
+              const Text("2"),
+              const Text("3"),
+              const Text("4"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+              const Text("5"),
+            ],
+          ),
         ),
       ),
-    );
+    ]);
   }
 }
