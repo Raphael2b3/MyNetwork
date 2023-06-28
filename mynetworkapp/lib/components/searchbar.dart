@@ -12,18 +12,20 @@ class Searchbar extends StatefulWidget {
 
 class _SearchbarState extends State<Searchbar> {
   final TextEditingController _searchController = TextEditingController();
+  double hight = 70;
+
+  bool focused = false;
+  FocusNode focusNode = FocusNode();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: const Color.fromRGBO(126, 87, 194, 1),
-      child: Container(
-        color: Colors.blue,
-        height: 10000,
-        width: 100,
-      ),
+    focusNode.addListener(
+      () => setState(() {
+        hight = hight != 70 ? 70 : 400;
+      }),
     );
-    /*Container(
+    return Container(
+      height: hight,
       color: const Color.fromRGBO(126, 87, 194, 1),
       child: Column(
         children: [
@@ -32,12 +34,20 @@ class _SearchbarState extends State<Searchbar> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Expanded(
-                child: Container(
+                child: Card(
                   margin: EdgeInsets.all(10),
                   child: TextField(
+                    focusNode: focusNode,
                     decoration: const InputDecoration(
                       icon: Icon(MyIcons.menu),
                     ),
+                    onTapOutside: (event) {
+                      focusNode.unfocus();
+
+                      setState(() {
+                        hight = hight != 70 ? 70 : 400;
+                      });
+                    },
                     controller: _searchController,
                   ),
                 ),
@@ -46,6 +56,13 @@ class _SearchbarState extends State<Searchbar> {
           ),
         ],
       ),
-    );*/
+    );
+
+    return Center(
+      heightFactor: 0,
+      child: FloatingActionButton(onPressed: () {
+        setState(() {});
+      }),
+    );
   }
 }

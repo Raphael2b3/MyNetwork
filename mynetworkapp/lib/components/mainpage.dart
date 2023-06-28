@@ -25,24 +25,41 @@ class _MainpageState extends State<Mainpage> {
   ];
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      child: Column(children: [
+    return Stack(
+      children: [
+        Container(
+          color: Colors.blueAccent,
+          child: Column(
+            children: [
+              Container(
+                height: 70,
+              ),
+              Expanded(
+                child: pages[pageindex],
+              ),
+              SizedBox(
+                  height: 60,
+                  child: NavigationBar(
+                    selectedIndex: pageindex,
+                    onDestinationSelected: (value) {
+                      setState(() {
+                        pageindex = value;
+                      });
+                    },
+                    destinations: const [
+                      NavigationDestination(
+                          icon: Icon(MyIcons.user), label: "Contact"),
+                      NavigationDestination(
+                          icon: Icon(MyIcons.plus), label: "Add"),
+                      NavigationDestination(
+                          icon: Icon(MyIcons.cog), label: "Setting")
+                    ],
+                  ))
+            ],
+          ),
+        ),
         Searchbar(),
-        pages[pageindex],
-        NavigationBar(
-          selectedIndex: pageindex,
-          onDestinationSelected: (value) {
-            setState(() {
-              pageindex = value;
-            });
-          },
-          destinations: const [
-            NavigationDestination(icon: Icon(MyIcons.user), label: "Contact"),
-            NavigationDestination(icon: Icon(MyIcons.plus), label: "Add"),
-            NavigationDestination(icon: Icon(MyIcons.cog), label: "Setting")
-          ],
-        )
-      ]),
+      ],
     );
   }
 }
